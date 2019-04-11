@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO; // namespace for IO reader to be addded 
+
+namespace File_reader
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // define your file path here
+            String path = @"D:\NUS Study\Documents\PracticeSites.txt";
+
+            using (StreamReader sr = File.OpenText(path))
+            {
+                String s = "";
+
+                while ((s = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(s);
+                }
+            }
+            Console.ReadKey();
+        }
+    }
+}
